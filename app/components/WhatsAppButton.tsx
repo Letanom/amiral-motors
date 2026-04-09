@@ -6,11 +6,15 @@ import { buildWhatsAppLink } from "../../lib/utils";
 export default function WhatsAppButton({
 	phone = "905316350034",
 	displayPhone,
-	className
+	hideText = false,
+	className,
+	labelClassName
 }: {
 	phone?: string;
 	displayPhone?: string;
+	hideText?: boolean;
 	className?: string;
+	labelClassName?: string;
 }) {
 	const t = useTranslations("whatsapp");
 	const href = buildWhatsAppLink(phone, t("message"));
@@ -21,10 +25,14 @@ export default function WhatsAppButton({
 			rel="noopener noreferrer"
 			className={`inline-flex items-center gap-2 rounded-full bg-green-500 text-white px-4 py-2 font-medium transition hover:bg-green-600 hover:scale-105 active:scale-95 ${className || ""}`}
 		>
-			<span className="relative">
+			<span className="relative shrink-0">
 				<FaWhatsapp className="text-xl" />
 			</span>
-			<span>{displayPhone || `+${phone}`}</span>
+			{!hideText && (
+				<span className={labelClassName}>
+					{displayPhone || `+${phone}`}
+				</span>
+			)}
 		</a>
 	);
 }

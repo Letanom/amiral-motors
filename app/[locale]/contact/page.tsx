@@ -29,7 +29,7 @@ export default function ContactPage() {
 							<WhatsAppButton 
 								phone="905316350034"
 								displayPhone="+90 531 635 00 34"
-								className="w-full justify-center py-3 text-base"
+								className="w-full justify-center py-2 text-sm"
 							/>
 						</div>
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
 							<WhatsAppButton 
 								phone="905326599934"
 								displayPhone="+90 532 659 99 34"
-								className="w-full justify-center py-3 text-base"
+								className="w-full justify-center py-2 text-sm"
 							/>
 						</div>
 					</div>
