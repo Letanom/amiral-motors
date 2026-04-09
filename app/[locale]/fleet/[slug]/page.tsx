@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const car = cars.find((c) => c.slug === params.slug);
 	if (!car) return {};
-	const title = `${car.brand} ${car.model} ${car.year} | AMİRAL GROUP`;
+	const title = `${car.brand} ${car.model} | AMİRAL GROUP`;
 	const description =
 		`Luxury car rental in Istanbul: ${car.brand} ${car.model}. Premium service, 24/7 support, multilingual.`;
 	const url = `https://amiral-group.example.com/fleet/${car.slug}`;
@@ -60,7 +60,7 @@ export default async function CarDetailPage({ params }: Props) {
 			</div>
 			<div className="lg:col-span-2">
 				<h1 className="text-3xl font-semibold">
-					{car.brand} {car.model} <span className="text-white/60">{car.year}</span>
+					{car.brand} {car.model}
 				</h1>
 				<p className="text-white/80 mt-3">{car.description[params.locale]}</p>
 				<table className="mt-6 w-full text-sm border-separate border-spacing-y-2">
