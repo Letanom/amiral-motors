@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "fleet": "Flotte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "phone": "0850 340 4436"
+  },
+  "hero": {
+    "title": "Entdecke Luxus, Spüre Freiheit",
+    "subtitle": "AMIRAL GROUP bietet Luxusmieten mit oder ohne Fahrer in Istanbul – Haustürlieferung und 24/7 VIP-Support.",
+    "cta_fleet": "Autos entdecken",
+    "cta_whatsapp": "WhatsApp",
+    "featured": "Ausgewählt"
+  },
+  "fleet": {
+    "search": "Auto suchen...",
+    "all": "Alle"
+  },
+  "car": {
+    "colors": "Farben",
+    "specs": "Spezifikationen",
+    "engine": "Motor",
+    "seats": "Sitze",
+    "transmission": "Getriebe",
+    "rent_now": "Jetzt mieten",
+    "contact_us": "Kontakt aufnehmen",
+    "power": "Leistung",
+    "acceleration": "0-100 km/h",
+    "drive": "Antrieb",
+    "similarCars": "Ähnliche Autos",
+    "automatic": "Automatik",
+    "manual": "Schaltgetriebe",
+    "petrol": "Benzin",
+    "diesel": "Diesel",
+    "electric": "Elektrisch",
+    "petrol_diesel": "Benzin / Diesel"
+  },
+  "stats": {
+    "support": "24/7 Support",
+    "transfer": "Transferdienst",
+    "delivery": "Lieferung innerhalb und zwischen Städten"
+  },
+  "whatsapp": {
+    "message": "Hallo, ich hätte gerne Informationen zur Autovermietung."
+  },
+  "footer": {
+    "rights": "© 2025 Amiral Group. Alle Rechte vorbehalten.",
+    "company": "AMIRAL GROUP",
+    "links": "Links",
+    "contactTitle": "Kontakt",
+    "social": "Sozial",
+    "slogan": "Entdecken Sie Luxus, spüren Sie die Freiheit",
+    "location": "Istanbul, Türkei",
+    "sectors": "Unsere Tätigkeitsbereiche",
+    "construction": "Bauwesen",
+    "textile": "Textil"
+  },
+  "about": {
+    "title": "Über Uns",
+    "description": "AMIRAL GROUP bietet erstklassige Luxus-Autovermietung in Istanbul.",
+    "history": "Unternehmensgeschichte und Zeitablauf",
+    "values": "Werte und Vision"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle1": "WhatsApp 1",
+    "desc1": "Klicken Sie für schnellen Support.",
+    "subtitle2": "WhatsApp 2",
+    "desc2": "Unsere alternative Leitung.",
+    "maps": "Google Maps (Platzhalter)",
+    "formName": "Vollständiger Name",
+    "formPhone": "Telefon",
+    "formMessage": "Nachricht",
+    "formSubmit": "Senden"
+  }
+}

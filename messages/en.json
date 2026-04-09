@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "fleet": "Fleet",
+    "about": "About",
+    "contact": "Contact",
+    "phone": "0850 340 4436"
+  },
+  "hero": {
+    "title": "Discover Luxury, Feel the Freedom",
+    "subtitle": "AMIRAL GROUP offers chauffeured/self-drive luxury rentals in Istanbul with door-to-door delivery and 24/7 VIP support.",
+    "cta_fleet": "Explore Cars",
+    "cta_whatsapp": "WhatsApp",
+    "featured": "Featured"
+  },
+  "fleet": {
+    "search": "Search for a car...",
+    "all": "All",
+    "no_results": "No cars found matching your criteria."
+  },
+  "car": {
+    "colors": "Colors",
+    "specs": "Specifications",
+    "engine": "Engine",
+    "seats": "Seats",
+    "transmission": "Transmission",
+    "rent_now": "Rent Now",
+    "contact_us": "Contact Us",
+    "power": "Power",
+    "acceleration": "0-100 km/h",
+    "drive": "Drive",
+    "similarCars": "Similar Cars",
+    "automatic": "Automatic",
+    "manual": "Manual",
+    "petrol": "Petrol",
+    "diesel": "Diesel",
+    "electric": "Electric",
+    "petrol_diesel": "Petrol / Diesel"
+  },
+  "stats": {
+    "support": "24/7 Support",
+    "transfer": "Transfer Service",
+    "delivery": "Intra-City & Inter-City Delivery Services"
+  },
+  "whatsapp": {
+    "message": "Hello, I would like information about car rental."
+  },
+  "footer": {
+    "rights": "© 2025 Amiral Group. All rights reserved.",
+    "company": "AMIRAL GROUP",
+    "links": "Links",
+    "contactTitle": "Contact",
+    "social": "Social",
+    "slogan": "Discover Luxury, Feel the Freedom",
+    "location": "Istanbul, Turkey",
+    "sectors": "Our Sectors",
+    "construction": "Construction",
+    "textile": "Textile"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "The story and activities of Amiral Group.",
+    "p1": "Founded in 2014, Amiral Group started its operations to provide services in the luxury car rental sector with a high-quality, trust, and prestige approach. Since its foundation, it has become a strong and reliable brand in the sector by prioritizing customer satisfaction.",
+    "p2": "In 2019, our company accelerated its growth process by opening its second branch in Etiler, Istanbul. In 2020, we launched our third branch in Bodrum, followed by our fourth branch in Vadi Istanbul. In line with our globalization vision, we have taken our place in the international arena with our branch opened in Dubai in 2025.",
+    "p3": "Amiral Group continues its investments not only in the field of luxury car rental but also in different sectors. In 2020, a 32-unit villa project in Bodrum and a 14-unit villa project in Çeşme were successfully implemented. Since the same year, we have been active in the production sector with our textile dyeing and printing factory established in Tekirdağ.",
+    "p4": "Today, Amiral Group continues its journey as a constantly growing and developing group of companies providing services in luxury car rental, construction, and textile fields.",
+    "footer": "Amiral Group, the unchanging address of quality and trust"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle1": "WhatsApp 1",
+    "desc1": "Click for quick support.",
+    "subtitle2": "WhatsApp 2",
+    "desc2": "Our alternative line.",
+    "maps": "Google Maps (placeholder)",
+    "formName": "Full Name",
+    "formPhone": "Phone",
+    "formMessage": "Message",
+    "formSubmit": "Submit"
+  }
+}

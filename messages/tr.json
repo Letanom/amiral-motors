@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "fleet": "Araçlarımız",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "phone": "0850 340 4436"
+  },
+  "hero": {
+    "title": "Lüksü Keşfet, Özgürlüğü Hisset",
+    "subtitle": "AMİRAL GROUP ile İstanbul’da şoförlü/şoförsüz lüks araç kiralama, kapıya teslim ve 7/24 VIP destek.",
+    "cta_fleet": "Araçları Keşfet",
+    "cta_whatsapp": "WhatsApp",
+    "featured": "Öne Çıkanlar"
+  },
+  "fleet": {
+    "search": "Araç ara...",
+    "all": "Hepsi",
+    "no_results": "İstediğiniz kriterlere göre araç bulunamadı."
+  },
+  "car": {
+    "colors": "Renkler",
+    "specs": "Teknik Özellikler",
+    "engine": "Motor",
+    "seats": "Koltuk",
+    "transmission": "Şanzıman",
+    "rent_now": "Hemen Kirala",
+    "contact_us": "Bize Ulaşın",
+    "power": "Güç",
+    "acceleration": "0-100 km/s",
+    "drive": "Çekiş",
+    "similarCars": "Benzer Araçlar",
+    "automatic": "Otomatik",
+    "manual": "Manuel",
+    "petrol": "Benzin",
+    "diesel": "Dizel",
+    "electric": "Elektrik",
+    "petrol_diesel": "Benzin / Dizel"
+  },
+  "stats": {
+    "support": "7/24 Destek",
+    "transfer": "Transfer Hizmeti",
+    "delivery": "Şehir içi ve Şehir dışı Teslimat Hizmetleri"
+  },
+  "whatsapp": {
+    "message": "Merhaba, araç kiralama hakkında bilgi almak istiyorum."
+  },
+  "footer": {
+    "rights": "© 2025 Amiral Group. Tüm hakları saklıdır.",
+    "company": "AMİRAL GROUP",
+    "links": "Hızlı Bağlantılar",
+    "contactTitle": "İletişim",
+    "social": "Sosyal Medya",
+    "slogan": "Lüksü Keşfet, Özgürlüğü Hisset",
+    "location": "İstanbul, Türkiye",
+    "sectors": "Faaliyetlerimiz",
+    "construction": "İnşaat",
+    "textile": "Tekstil"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Amiral Group'un hikayesi ve faaliyet alanları.",
+    "p1": "2014 yılında kurulan Amiral Group, lüks araç kiralama sektöründe yüksek kalite, güven ve prestij anlayışıyla hizmet vermek amacıyla faaliyetlerine başlamıştır. Kurulduğu günden bu yana müşteri memnuniyetini ön planda tutarak, sektörde güçlü ve güvenilir bir marka haline gelmiştir.",
+    "p2": "2019 yılında İstanbul Etiler’de ikinci şubesini açarak büyüme sürecini hızlandıran firmamız, 2020 yılında Bodrum’da üçüncü şubesini, ardından Vadi İstanbul’da dördüncü şubesini hizmete sunmuştur. Globalleşme vizyonu doğrultusunda ise 2025 yılında Dubai’de açılan şubemizle uluslararası arenada da yerimizi almış bulunmaktayız.",
+    "p3": "Amiral Group, sadece lüks araç kiralama alanında değil, farklı sektörlerde de yatırımlarını sürdürmektedir. 2020 yılında Bodrum’da 32 dairelik villa projesi ve Çeşme’de 14 dairelik villa projesi başarıyla hayata geçirilmiştir. Aynı yıl itibarıyla Tekirdağ’da kurulan tekstil boya ve baskı fabrikamız ile üretim sektöründe de aktif olarak faaliyet göstermekteyiz.",
+    "p4": "Bugün Amiral Group; lüks araç kiralama, inşaat ve tekstil alanlarında hizmet veren, sürekli büyüyen ve gelişen bir şirketler grubu olarak yoluna emin adımlarla devam etmektedir.",
+    "footer": "Amiral Group, kalite ve güvenin değişmeyen adresidir"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle1": "WhatsApp 1",
+    "desc1": "Hızlı destek için tıklayın.",
+    "subtitle2": "WhatsApp 2",
+    "desc2": "Alternatif hattımız.",
+    "maps": "Google Maps (yer tutucu)",
+    "formName": "Ad Soyad",
+    "formPhone": "Telefon",
+    "formMessage": "Mesaj",
+    "formSubmit": "Gönder"
+  }
+}
