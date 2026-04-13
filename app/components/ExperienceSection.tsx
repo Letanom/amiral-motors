@@ -82,6 +82,45 @@ export default function ExperienceSection() {
                         <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(140,32,22,0.15)] group">
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500 z-10" />
                             <video 
+                                src="/video4.mp4" 
+                                autoPlay 
+                                loop 
+                                muted 
+                                playsInline 
+                                className="w-full h-auto object-cover scale-105 group-hover:scale-100 transition-transform duration-700" 
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+
+                {/* Block 3 */}
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="flex-1 space-y-6"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-display font-semibold text-white">
+                            {t("title3")}
+                        </h2>
+                        <div className="w-16 h-1 bg-[#c9a84c] rounded-full" />
+                        <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light">
+                            {t("text3")}
+                        </p>
+                    </motion.div>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="flex-1 w-full"
+                    >
+                        <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(201,168,76,0.15)] group">
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500 z-10" />
+                            <video 
                                 src="/video3.mp4" 
                                 autoPlay 
                                 loop 
