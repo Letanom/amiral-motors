@@ -38,11 +38,11 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 		};
 	}
 
-	if (locale === 'ru') {
+	if (locale === 'de') {
 		return {
-			title: "Amiral Motors | Аренда элитных авто и VIP автомобилей в Стамбуле",
-			description: "Прокат элитных и спортивных авто в Стамбуле. Выгодные цены, поддержка 24/7 и доставка в аэропорт.",
-			keywords: "аренда авто стамбул, прокат элитных авто, аренда авто VIP, rent a car istanbul, amiral motors, стамбул аренда машины",
+			title: "Amiral Motors | Luxusautovermietung & VIP Rent a Car in Istanbul",
+			description: "Mieten Sie Premium- und Sportwagen in Istanbul. Beste Preise, 24/7-Support und Flughafenlieferung mit Amiral Motors.",
+			keywords: "autovermietung istanbul, luxusautovermietung istanbul, vip mietwagen, amiral motors",
 			icons: { icon: "/favicon.ico" },
 		};
 	}
