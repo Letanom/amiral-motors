@@ -14,9 +14,24 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "AMİRAL GROUP | Luxury Rent a Car Istanbul",
+  title: "Amiral Motors | İstanbul Lüks Araç Kiralama & VIP Rent a Car",
   description:
-    "Discover luxury car rental in Istanbul with AMIRAL GROUP. Premium service, 24/7 support, multilingual team.",
+    "İstanbul'da lüks araç kiralama (VIP rent a car) hizmeti. En iyi fiyat garantisiyle premium, spor ve VIP Vito kiralayın. Amiral Motors ayrıcalığıyla yola çıkın.",
+  keywords: "lüks araç kiralama, araç kiralama, rent a car, vip araç kiralama, spor araç kiralama, istanbul lüks araç kiralama, amiral motors, suv kiralama, ucuz araç kiralama, oto kiralama",
+  authors: [{ name: "Amiral Motors" }],
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Amiral Motors | İstanbul Lüks Araç Kiralama & Premium Rent a Car",
+    description: "Amiral Motors ile İstanbul'da en lüks araçları kiralayın. Güvenilir rent a car deneyimi, 7/24 destek ve havalimanı teslimatı.",
+    type: "website",
+    locale: "tr_TR",
+    url: "https://amiralmotors.com",
+    siteName: "Amiral Motors"
+  }
 };
 
 export default async function RootLayout({

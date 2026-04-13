@@ -45,6 +45,19 @@
   "whatsapp": {
     "message": "Merhaba, araç kiralama hakkında bilgi almak istiyorum."
   },
+  "experience": {
+    "title1": "Ayrıcalığı Hissedin",
+    "text1": "Size özel tasarlanmış lüks araç filomuzla seyahatlerinizi unutulmaz bir deneyime dönüştürün. Sadece bir araç kiralamıyor, prestiji ve konforu bir arada sunuyoruz.",
+    "title2": "Güven ve Performans",
+    "text2": "Her bir aracımız mükemmel kondisyonda olup, en üst düzey güvenlik ve performans standartlarını karşılamak için düzenli bakımdan geçer."
+  },
+  "counters": {
+    "rented": "Kiralanan Araç",
+    "customers": "Mutlu Müşteri",
+    "years": "Hizmet Yılı",
+    "title": "Rakamlarla Amiral Motors",
+    "desc": "Sizlere güvenilir ve lüks bir deneyim sunmak için her gün kendimizi geliştiriyoruz."
+  },
   "footer": {
     "rights": "© 2025 Amiral Motors. Tüm hakları saklıdır.",
     "company": "AMİRAL MOTORS",

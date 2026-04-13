@@ -32,7 +32,6 @@ export default function HeroSection() {
 						muted
 						playsInline
 						onEnded={handleVideoEnded}
-						poster={currentVideoIndex === 0 ? "/amiral.png" : undefined}
 					/>
 				)}
 				<div className="absolute inset-0 bg-black/55" />

@@ -5,6 +5,8 @@ import CarCard from "../components/CarCard";
 import { cars } from "../../data/cars";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import ExperienceSection from "../components/ExperienceSection";
+import SuccessCounters from "../components/SuccessCounters";
 
 export const dynamic = "force-static";
 
@@ -32,6 +34,8 @@ export default function HomePage() {
 					</Link>
 				</div>
 			</section>
+			<ExperienceSection />
+			<SuccessCounters />
 		</div>
 	);
 }

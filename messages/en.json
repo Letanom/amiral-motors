@@ -45,6 +45,19 @@
   "whatsapp": {
     "message": "Hello, I would like information about car rental."
   },
+  "experience": {
+    "title1": "Feel the Privilege",
+    "text1": "Turn your journeys into an unforgettable experience with our specially designed luxury vehicle fleet. You are not just renting a car, we offer prestige and comfort together.",
+    "title2": "Trust and Performance",
+    "text2": "Each of our vehicles is in perfect condition and undergoes regular maintenance to meet the highest safety and performance standards."
+  },
+  "counters": {
+    "rented": "Rented Vehicles",
+    "customers": "Happy Customers",
+    "years": "Years of Experience",
+    "title": "Amiral Motors by the Numbers",
+    "desc": "We keep improving every day to offer you a reliable and luxury experience."
+  },
   "footer": {
     "rights": "© 2025 Amiral Motors. All rights reserved.",
     "company": "AMIRAL MOTORS",
