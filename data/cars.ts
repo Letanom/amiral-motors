@@ -80,7 +80,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-coupe.jpeg" }
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-coupe.jpeg" },
+			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/audi-a5-coupe-mavi.jpeg" }
 		],
 		featured: true
 	},
@@ -109,7 +110,8 @@ export const cars: Car[] = [
 		colors: [
 			{ name: "Blue", nameKey: "blue", hex: "#4a90e2", image: "/porsche-taycan-turbo-s.jpeg" },
 			{ name: "Mat Siyah", nameKey: "matte-black", hex: "#1a1a1a", image: "/porsche-taycan-turbo-s-matte-black.jpeg" },
-			{ name: "Kum Rengi", nameKey: "sand", hex: "#c2b280", image: "/porsche-taycan-sand.jpeg" }
+			{ name: "Kum Rengi", nameKey: "sand", hex: "#c2b280", image: "/porsche-taycan-sand.jpeg" },
+			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/porsche-taycan-turbo-s-gri.jpeg" }
 		],
 		featured: true
 	},
@@ -320,7 +322,7 @@ export const cars: Car[] = [
 			de: "Komfort und Prestige."
 		},
 		specs: {
-			engine: "diesel",
+			engine: "petrol",
 			power: "",
 			acceleration: "",
 			seats: 5,
@@ -329,7 +331,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-e-serisi.jpeg" }
+			{ name: "Standart", nameKey: "standard", hex: "#E0E0E0", image: "/mercedes-e-class-sedan-benzin.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-e-class-sedan-dizel-siyah.jpeg" }
 		],
 		featured: true
 	},
@@ -357,7 +360,8 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Lacivert", nameKey: "navy", hex: "#000080", image: "/ford-mustang.jpeg" },
-			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/ford-mustang-grey.jpeg" }
+			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/ford-mustang-grey.jpeg" },
+			{ name: "Sarı", nameKey: "yellow", hex: "#FFD700", image: "/ford-mustang-sari.jpeg" }
 		],
 		featured: true
 	},
@@ -466,7 +470,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-eqe.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-eqe.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-eqe-white.jpeg" }
 		],
 		featured: true
 	},
@@ -520,7 +525,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-cabrio.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-cabrio.jpeg" },
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-cabrio-kirmizi.jpeg" }
 		],
 		featured: true
 	},
@@ -548,7 +554,8 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/audi-a3-sedan.jpeg" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a3-sedan-black.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a3-sedan-black.jpeg" },
+			{ name: "Koyu Yeşil", nameKey: "dark-green", hex: "#006400", image: "/audi-a3-sedan-yesil.jpeg" }
 		],
 		featured: true
 	},
@@ -556,7 +563,7 @@ export const cars: Car[] = [
 		id: "bmw-5-serisi-elektrik",
 		slug: "bmw-5-serisi-elektrik",
 		brand: "BMW",
-		model: "5 Serisi (Elektrikli)",
+		model: "5 Serisi i5 (Elektrikli)",
 		
 		category: "Sedan",
 		description: {
@@ -575,7 +582,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-5-series-electric.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-5-series-electric.jpeg" },
+			{ name: "Koyu Kırmızı", nameKey: "dark-red", hex: "#8B0000", image: "/bmw-i5-koyu-kirmizi.jpeg" }
 		],
 		featured: true
 	},
@@ -583,7 +591,7 @@ export const cars: Car[] = [
 		id: "bmw-7-serisi-elektrik",
 		slug: "bmw-7-serisi-elektrik",
 		brand: "BMW",
-		model: "7 Serisi (Elektrikli)",
+		model: "7 Serisi i7 (Elektrikli)",
 		
 		category: "Sedan",
 		description: {
@@ -602,7 +610,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-7-series-electric.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-i7-siyah.jpeg" },
+			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/bmw-i7-mavi.jpeg" }
 		],
 		featured: true
 	},
@@ -712,7 +721,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mini-cooper.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mini-cooper.jpeg" },
+			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/mini-cooper-yesil.jpeg" }
 		],
 		featured: true
 	},
@@ -849,7 +859,8 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Yeşil", nameKey: "green", hex: "#2e7d32", image: "/bmw-4-series.jpeg" },
-			{ name: "Mavi", nameKey: "blue", hex: "#1565c0", image: "/bmw-4-series-blue.jpeg" }
+			{ name: "Mavi", nameKey: "blue", hex: "#1565c0", image: "/bmw-4-series-blue.jpeg" },
+			{ name: "Nardo Gri", nameKey: "nardo-grey", hex: "#8A8D8F", image: "/bmw-4-series-nardo-gri.jpeg" }
 		],
 		featured: true
 	},

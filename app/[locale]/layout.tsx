@@ -9,8 +9,8 @@ import "../globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Amiral Group | Istanbul Luxury Car Rental",
-	description: "Discover luxury and feel the freedom with Amiral Group. Premium car rental services in Istanbul.",
+	title: "Amiral Motors | Istanbul Luxury Car Rental",
+	description: "Discover luxury and feel the freedom with Amiral Motors. Premium car rental services in Istanbul.",
 	icons: {
 		icon: "/favicon.ico",
 	},

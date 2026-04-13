@@ -1,14 +1,22 @@
 "use client";
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
 import { useTranslations } from "next-intl";
 
+const VIDEOS = ["/video.mp4", "/video2.mp4", "/video3.mp4"];
+
 export default function HeroSection() {
 	const t = useTranslations("hero");
 	const prefersReducedMotion = useReducedMotion();
+	const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
 	const words = t("title").split(" ");
+
+	const handleVideoEnded = () => {
+		setCurrentVideoIndex((prev) => (prev + 1) % VIDEOS.length);
+	};
 
 	return (
 		<section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -17,13 +25,14 @@ export default function HeroSection() {
 					<div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center" />
 				) : (
 					<video
-						className="absolute inset-0 w-full h-full object-cover"
-						src="/video.mp4"
+						key={VIDEOS[currentVideoIndex]}
+						className="absolute inset-0 w-full h-full object-cover animate-in fade-in duration-500"
+						src={VIDEOS[currentVideoIndex]}
 						autoPlay
 						muted
-						loop
 						playsInline
-						poster="/amiral.png"
+						onEnded={handleVideoEnded}
+						poster={currentVideoIndex === 0 ? "/amiral.png" : undefined}
 					/>
 				)}
 				<div className="absolute inset-0 bg-black/55" />

@@ -75,7 +75,7 @@ export default function Navbar({ locale, dir }: { locale: AppLocale; dir: "ltr" 
 			<nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 				<Link href={`/${locale}`} className="font-display text-xl shrink-0">
 					<span className="tracking-wide">AMIRAL</span>{" "}
-					<span className="text-[#8c2016]">GROUP</span>
+					<span className="text-[#8c2016]">MOTORS</span>
 				</Link>
 
 				<div className="hidden lg:flex items-center gap-6">

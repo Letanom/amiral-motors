@@ -12,7 +12,7 @@ export default function Footer({ locale }: { locale: AppLocale }) {
 			<div className="max-w-7xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-5">
 				<div>
 					<div className="font-display text-2xl">
-						<span>AMIRAL</span> <span className="text-[#8c2016]">GROUP</span>
+						<span>AMIRAL</span> <span className="text-[#8c2016]">MOTORS</span>
 					</div>
 					<p className="text-sm text-white/70 mt-2">"{t("slogan")}"</p>
 				</div>
