@@ -2,6 +2,7 @@
   "nav": {
     "home": "Startseite",
     "fleet": "Flotte",
+    "gallery": "Galerie",
     "about": "Über uns",
     "contact": "Kontakt",
     "phone": "0850 340 4436"
@@ -58,6 +59,18 @@
     "years": "Jahre Erfahrung",
     "title": "Amiral Motors in Zahlen",
     "desc": "Wir verbessern uns jeden Tag, um Ihnen ein zuverlässiges und luxuriöses Erlebnis zu bieten."
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Entdecken Sie die Welt des Luxus bei Amiral Motors. Erleben Sie die Kraft und Eleganz unserer Flotte.",
+    "video1_title": "Unsere Luxusflotte",
+    "video1_desc": "Lernen Sie unsere Premium-Fahrzeuge kennen.",
+    "video2_title": "Exklusives Erlebnis",
+    "video2_desc": "Details, die jede Reise unvergesslich machen.",
+    "video3_title": "VIP-Service",
+    "video3_desc": "24/7 professioneller Support und Chauffeurservice.",
+    "video4_title": "Vertrauen und Leistung",
+    "video4_desc": "Höchste Sicherheits- und Fahrleistungsstandards."
   },
   "footer": {
     "rights": "© 2025 Amiral Motors. Alle Rechte vorbehalten.",

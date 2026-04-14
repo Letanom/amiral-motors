@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "fleet": "Fleet",
+    "gallery": "Gallery",
     "about": "About",
     "contact": "Contact",
     "phone": "0850 340 4436"
@@ -59,6 +60,18 @@
     "years": "Years of Experience",
     "title": "Amiral Motors by the Numbers",
     "desc": "We keep improving every day to offer you a reliable and luxury experience."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Discover the world of luxury at Amiral Motors. Explore the power and elegance of our fleet.",
+    "video1_title": "Our Luxury Fleet",
+    "video1_desc": "Meet our premium vehicles.",
+    "video2_title": "Exclusive Experience",
+    "video2_desc": "Details that make every journey unforgettable.",
+    "video3_title": "VIP Service",
+    "video3_desc": "24/7 professional support and chauffeured car service.",
+    "video4_title": "Trust and Performance",
+    "video4_desc": "Top-tier safety and driving performance."
   },
   "footer": {
     "rights": "© 2025 Amiral Motors. All rights reserved.",

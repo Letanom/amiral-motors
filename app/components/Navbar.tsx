@@ -81,6 +81,7 @@ export default function Navbar({ locale, dir }: { locale: AppLocale; dir: "ltr" 
 				<div className="hidden lg:flex items-center gap-6">
 					<Link href={`/${locale}`} className="hover:text-[#8c2016] transition-colors">{t("home")}</Link>
 					<Link href={`/${locale}/fleet`} className="hover:text-[#8c2016] transition-colors">{t("fleet")}</Link>
+					<Link href={`/${locale}/gallery`} className="hover:text-[#8c2016] transition-colors">{t("gallery")}</Link>
 					<Link href={`/${locale}/about`} className="hover:text-[#8c2016] transition-colors">{t("about")}</Link>
 					<Link href={`/${locale}/contact`} className="hover:text-[#8c2016] transition-colors">{t("contact")}</Link>
 					{switcher}
@@ -125,6 +126,7 @@ export default function Navbar({ locale, dir }: { locale: AppLocale; dir: "ltr" 
 					<div className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-4 text-center">
 						<Link href={`/${locale}`} onClick={() => setMenuOpen(false)} className="text-lg py-1">{t("home")}</Link>
 						<Link href={`/${locale}/fleet`} onClick={() => setMenuOpen(false)} className="text-lg py-1">{t("fleet")}</Link>
+						<Link href={`/${locale}/gallery`} onClick={() => setMenuOpen(false)} className="text-lg py-1">{t("gallery")}</Link>
 						<Link href={`/${locale}/about`} onClick={() => setMenuOpen(false)} className="text-lg py-1">{t("about")}</Link>
 						<Link href={`/${locale}/contact`} onClick={() => setMenuOpen(false)} className="text-lg py-1">{t("contact")}</Link>
 						<div className="pt-2">
