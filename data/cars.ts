@@ -190,7 +190,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-s-class.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-s-class.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-s-class-white.jpeg" }
 		],
 		featured: true
 	},
@@ -358,7 +359,6 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-e-class-white.jpeg" },
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-e-class-sedan-dizel-siyah.jpeg" }
 		],
 		featured: true
@@ -440,7 +440,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-macan.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-macan.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/porsche-macan-white.jpeg" }
 		],
 		featured: true
 	},
@@ -494,7 +495,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Sarı", nameKey: "yellow", hex: "#FFFF00", image: "/chevrolet-camaro.jpeg" }
+			{ name: "Sarı", nameKey: "yellow", hex: "#FFFF00", image: "/chevrolet-camaro-yellow.jpeg" },
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/chevrolet-camaro-red.jpeg" }
 		],
 		featured: true
 	},
@@ -834,7 +836,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-q3-black.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-q3-black.jpeg" },
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-q3-red.jpeg" }
 		],
 		featured: true
 	},
