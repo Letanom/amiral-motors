@@ -42,13 +42,15 @@ export default function CarCard({ car }: { car: Car }) {
 				<h3 className="font-semibold text-lg uppercase tracking-tight">
 					{car.brand} {car.model}
 				</h3>
-				<div className="mt-2 text-xs text-white/60 font-medium flex items-center gap-2">
-					<span className="px-2 py-0.5 rounded bg-white/5 border border-white/10">{t(car.specs.engine)}</span>
-					<span>•</span>
-					<span>{car.specs.seats} {t("seats")}</span>
-					<span>•</span>
-					<span>{t(car.specs.transmission)}</span>
-				</div>
+				{car.category !== "Yacht" && car.category !== "Helicopter" && (
+					<div className="mt-2 text-xs text-white/60 font-medium flex items-center gap-2">
+						<span className="px-2 py-0.5 rounded bg-white/5 border border-white/10">{t(car.specs.engine)}</span>
+						<span>•</span>
+						<span>{car.specs.seats} {t("seats")}</span>
+						<span>•</span>
+						<span>{t(car.specs.transmission)}</span>
+					</div>
+				)}
 
 				{car.colors.length > 1 && (
 					<div className="mt-4 flex items-center gap-2.5">

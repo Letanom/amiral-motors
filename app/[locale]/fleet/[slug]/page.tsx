@@ -63,34 +63,36 @@ export default async function CarDetailPage({ params }: Props) {
 					{car.brand} {car.model}
 				</h1>
 				<p className="text-white/80 mt-3">{car.description[params.locale]}</p>
-				<table className="mt-6 w-full text-sm border-separate border-spacing-y-2">
-					<tbody>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">{t("car.engine")}</td>
-							<td className="px-3 py-2">{car.specs.engine}</td>
-						</tr>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">Power</td>
-							<td className="px-3 py-2">{car.specs.power}</td>
-						</tr>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">0-100 km/h</td>
-							<td className="px-3 py-2">{car.specs.acceleration}</td>
-						</tr>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">{t("car.seats")}</td>
-							<td className="px-3 py-2">{car.specs.seats}</td>
-						</tr>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">{t("car.transmission")}</td>
-							<td className="px-3 py-2">{car.specs.transmission}</td>
-						</tr>
-						<tr className="bg-white/[0.03]">
-							<td className="px-3 py-2 text-white/60">Drive</td>
-							<td className="px-3 py-2">{car.specs.drive}</td>
-						</tr>
-					</tbody>
-				</table>
+				{car.category !== "Yacht" && car.category !== "Helicopter" && (
+					<table className="mt-6 w-full text-sm border-separate border-spacing-y-2">
+						<tbody>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">{t("car.engine")}</td>
+								<td className="px-3 py-2">{car.specs.engine}</td>
+							</tr>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">Power</td>
+								<td className="px-3 py-2">{car.specs.power}</td>
+							</tr>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">0-100 km/h</td>
+								<td className="px-3 py-2">{car.specs.acceleration}</td>
+							</tr>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">{t("car.seats")}</td>
+								<td className="px-3 py-2">{car.specs.seats}</td>
+							</tr>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">{t("car.transmission")}</td>
+								<td className="px-3 py-2">{car.specs.transmission}</td>
+							</tr>
+							<tr className="bg-white/[0.03]">
+								<td className="px-3 py-2 text-white/60">Drive</td>
+								<td className="px-3 py-2">{car.specs.drive}</td>
+							</tr>
+						</tbody>
+					</table>
+				)}
 				<div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
 					<WhatsAppButton />
 					<WhatsAppButton />
