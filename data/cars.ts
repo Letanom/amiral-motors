@@ -366,6 +366,33 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
+		id: "mercedes-e220d",
+		slug: "mercedes-e220d",
+		brand: "Mercedes-Benz",
+		model: "E 220 d",
+		
+		category: "Sedan",
+		description: {
+			tr: "Yüksek verimlilik ve üstün konfor.",
+			en: "High efficiency and superior comfort.",
+			ar: "كفاءة عالية وراحة فائقة.",
+			de: "Hohe Effizienz und erstklassiger Komfort."
+		},
+		specs: {
+			engine: "diesel",
+			power: "200 HP",
+			acceleration: "7.4s",
+			seats: 5,
+			transmission: "automatic",
+			drive: "RWD"
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-e220d.jpeg" }
+		],
+		featured: true
+	},
+	{
 		id: "land-rover-sport",
 		slug: "land-rover-sport",
 		brand: "Land Rover",
@@ -472,7 +499,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/range-rover-defender.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/land-rover-defender-black-new.jpeg" },
 			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/land-rover-defender-green.jpeg" }
 		],
 		featured: true
@@ -675,7 +702,8 @@ export const cars: Car[] = [
 			{ name: "Mavi", nameKey: "blue", hex: "#1565c0", image: "/bmw-4-series-blue.jpeg" },
 			{ name: "Nardo Gri", nameKey: "nardo-grey", hex: "#8A8D8F", image: "/bmw-4-series-nardo-gri.jpeg" },
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/bmw-4-series-red.jpeg" },
-			{ name: "Turuncu", nameKey: "orange", hex: "#FF8C00", image: "/bmw-4-series-orange.jpeg" }
+			{ name: "Turuncu", nameKey: "orange", hex: "#FF8C00", image: "/bmw-4-series-orange.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-4-series-coupe-black.jpeg" }
 		],
 		featured: true
 	},
@@ -776,7 +804,7 @@ export const cars: Car[] = [
 			de: "Premium-SUV-Erlebnis."
 		},
 		specs: {
-			engine: "petrol",
+			engine: "diesel",
 			power: "",
 			acceleration: "",
 			seats: 5,
@@ -785,7 +813,9 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/land_rover.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/land-rover-evoque-black.jpeg" },
+			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/land_rover.jpeg" },
+			{ name: "Bordo", nameKey: "maroon", hex: "#800000", image: "/land-rover-evoque-maroon.jpeg" }
 		],
 		featured: true
 	},
@@ -814,6 +844,34 @@ export const cars: Car[] = [
 		colors: [
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-eqe.jpeg" },
 			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-eqe-white.jpeg" }
+		],
+		featured: true
+	},
+	{
+		id: "audi-q4",
+		slug: "audi-q4",
+		brand: "Audi",
+		model: "Q4",
+		
+		category: "SUV",
+		description: {
+			tr: "Geleceğin elektrikli SUV deneyimi.",
+			en: "The electric SUV experience of the future.",
+			ar: "تجربة الدفع الرباعي الكهربائية للمستقبل.",
+			de: "Das elektrische SUV-Erlebnis der Zukunft."
+		},
+		specs: {
+			engine: "electric",
+			power: "",
+			acceleration: "",
+			seats: 5,
+			transmission: "automatic",
+			drive: ""
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-q4-black.jpeg" },
+			{ name: "Metalik Mavi", nameKey: "metallic-blue", hex: "#4682B4", image: "/audi-q4-metallic-blue.jpeg" }
 		],
 		featured: true
 	},
@@ -909,6 +967,35 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
+		id: "mercedes-c-serisi",
+		slug: "mercedes-c-serisi",
+		brand: "Mercedes-Benz",
+		model: "C Serisi",
+		
+		category: "Sedan",
+		description: {
+			tr: "Modern lüks ve dinamizmin mükemmel dengesi.",
+			en: "The perfect balance of modern luxury and dynamism.",
+			ar: "التوازن المثالي بين الفخامة الحديثة والديناميكية.",
+			de: "Die perfekte Balance aus modernem Luxus und Dynamik."
+		},
+		specs: {
+			engine: "petrol",
+			power: "204 HP",
+			acceleration: "7.3s",
+			seats: 5,
+			transmission: "automatic",
+			drive: "RWD"
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Lacivert", nameKey: "navy", hex: "#000080", image: "/mercedes-c-class-navy.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-c-class-black.jpeg" },
+			{ name: "Şampanya", nameKey: "champagne", hex: "#F7E7CE", image: "/mercedes-c-class-champagne.jpeg" }
+		],
+		featured: true
+	},
+	{
 		id: "audi-a4",
 		slug: "audi-a4",
 		brand: "Audi",
@@ -931,7 +1018,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a4-black.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a4-s-line-black.jpeg" },
 			{ name: "Lacivert", nameKey: "navy", hex: "#000080", image: "/audi-a4-navy.jpeg" },
 			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/audi-a4-grey.jpeg" }
 		],
@@ -960,7 +1047,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-cla.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-cla.jpeg" },
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/mercedes-cla-red.jpeg" }
 		],
 		featured: true
@@ -988,7 +1075,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-x1.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-x1.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-x1-white.jpeg" }
 		],
 		featured: true
 	},
@@ -1079,6 +1167,33 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
+		id: "ds-7",
+		slug: "ds-7",
+		brand: "DS",
+		model: "DS 7",
+		
+		category: "SUV",
+		description: {
+			tr: "Fransız asaleti ve üst düzey konfor.",
+			en: "French elegance and high-level comfort.",
+			ar: "النبل الفرنسي والراحة عالية المستوى.",
+			de: "Französischer Adel und erstklassiger Komfort."
+		},
+		specs: {
+			engine: "diesel",
+			power: "130 HP",
+			acceleration: "10.1s",
+			seats: 5,
+			transmission: "automatic",
+			drive: "FWD"
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/ds-7.jpeg" }
+		],
+		featured: true
+	},
+	{
 		id: "alfa-romeo-tonale",
 		slug: "alfa-romeo-tonale",
 		brand: "Alfa Romeo",
@@ -1114,7 +1229,7 @@ export const cars: Car[] = [
 		
 		category: "Cabrio",
 		description: {
-			tr: "Şık tasarım ve üstü açık özgürlük.",
+			tr: "Şık tasarım and üstü açık özgürlük.",
 			en: "Stylish design and open-top freedom.",
 			ar: "تصميم أنيق وحرية السقف المفتوح.",
 			de: "Stilvolles Design und Open-Top-Freiheit."
@@ -1157,7 +1272,10 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/bmw-2-series.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-2-series-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-2-white-new.jpeg" },
+			{ name: "Metalik Mavi", nameKey: "metallic-blue", hex: "#4682B4", image: "/bmw-2-metallic-blue.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-2-black.jpeg" },
+			{ name: "Metal", nameKey: "metal", hex: "#A9A9A9", image: "/bmw-2-metal.jpeg" }
 		],
 		featured: true
 	},
@@ -1219,34 +1337,6 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
-		id: "mercedes-c-serisi",
-		slug: "mercedes-c-serisi",
-		brand: "Mercedes-Benz",
-		model: "C Serisi",
-		
-		category: "Sedan",
-		description: {
-			tr: "Modern lüks ve dinamizmin mükemmel dengesi.",
-			en: "The perfect balance of modern luxury and dynamism.",
-			ar: "التوازن المثالي بين الفخامة الحديثة والديناميكية.",
-			de: "Die perfekte Balance aus modernem Luxus und Dynamik."
-		},
-		specs: {
-			engine: "petrol",
-			power: "204 HP",
-			acceleration: "7.3s",
-			seats: 5,
-			transmission: "automatic",
-			drive: "RWD"
-		},
-		dailyPrice: 0,
-		colors: [
-			{ name: "Lacivert", nameKey: "navy", hex: "#000080", image: "/mercedes-c-class-navy.jpeg" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-c-class-black.jpeg" }
-		],
-		featured: true
-	},
-	{
 		id: "amiral-luxury-yacht",
 		slug: "amiral-luxury-yacht",
 		brand: "Amiral",
@@ -1269,7 +1359,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Standart", nameKey: "standard", hex: "#FFFFFF", image: "/yacht-main.jpeg" }
+			{ name: "White", nameKey: "white", hex: "#FFFFFF", image: "/luxury-yacht-new.jpeg" }
 		],
 		featured: true
 	},
@@ -1281,22 +1371,22 @@ export const cars: Car[] = [
 		
 		category: "Helicopter",
 		description: {
-			tr: "Hızlı, güvenli ve özel hava ulaşımı.",
-			en: "Fast, safe, and exclusive air travel.",
-			ar: "سفر جوي سريع وآمن وحصري.",
-			de: "Schnelle, sichere und exklusive Flugreisen."
+			tr: "Hızlı, güvenli ve lüks hava ulaşımı.",
+			en: "Fast, safe, and luxury air transportation.",
+			ar: "نقل جوي سريع وآمن وفاخر.",
+			de: "Schneller, sicherer und luxuriöser Lufttransport."
 		},
 		specs: {
 			engine: "Turboshaft",
-			power: "Single/Twin",
-			acceleration: "150 knots",
+			power: "1100 HP",
+			acceleration: "150 mph",
 			seats: 6,
 			transmission: "Rotor",
-			drive: "Helipad"
+			drive: "Rotor"
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Standart", nameKey: "standard", hex: "#FFFFFF", image: "/helicopter-main.jpeg" }
+			{ name: "Black", nameKey: "black", hex: "#000000", image: "/helicopter-new.jpeg" }
 		],
 		featured: true
 	}

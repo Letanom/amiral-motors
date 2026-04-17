@@ -72,7 +72,7 @@ export default function HeroSection() {
 				</motion.p>
 				<div className="mt-8 flex items-center justify-center gap-4">
 					<Link
-						href="#featured"
+						href="fleet"
 						className="relative inline-block rounded-full bg-[#8c2016] text-white px-6 py-3 font-medium overflow-hidden"
 					>
 						<span className="relative z-10">{t("cta_fleet")}</span>

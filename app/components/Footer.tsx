@@ -66,7 +66,12 @@ export default function Footer({ locale }: { locale: AppLocale }) {
 				</div>
 			</div>
 			<div className="border-t border-[#8c2016]/20">
-				<p className="max-w-7xl mx-auto px-4 py-6 text-sm text-white/60">{t("rights")}</p>
+				<div className="max-w-7xl mx-auto px-4 py-8 text-center space-y-1">
+					<p className="text-sm text-white/60">{t("rights")}</p>
+					<p className="text-xs tracking-wide opacity-50 font-medium">
+						Created by <span className="text-[#8c2016] font-display font-bold">KEWEBLE</span>
+					</p>
+				</div>
 			</div>
 		</footer>
 	);
