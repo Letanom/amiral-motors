@@ -80,8 +80,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/lamborghini-urus.jpeg" },
-			{ name: "Yeşil", nameKey: "green", hex: "#4caf50", image: "/lamborghini-urus-green.jpeg" }
+			{ name: "Yeşil", nameKey: "green", hex: "#4caf50", image: "/lamborghini-urus-green.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/lamborghini-urus.jpeg" }
 		],
 		featured: true
 	},
@@ -164,8 +164,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-g63-black.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-g63-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-g63-white.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-g63-black.jpeg" }
 		],
 		featured: true
 	},
@@ -305,8 +305,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-taycan.jpeg" },
-			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/porsche-taycan-4s-red.jpeg" }
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/porsche-taycan-4s-red.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-taycan.jpeg" }
 		],
 		featured: true
 	},
@@ -333,12 +333,12 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-718-boxster.jpeg" },
-			{ name: "Sarı", nameKey: "yellow", hex: "#FFD700", image: "/porsche-718-boxster-yellow.jpeg" }
+			{ name: "Sarı", nameKey: "yellow", hex: "#FFD700", image: "/porsche-718-boxster-yellow.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-718-boxster.jpeg" }
 		],
 		featured: true
 	},
-	{
+	/*{
 		id: "mercedes-e-serisi",
 		slug: "mercedes-e-serisi",
 		brand: "Mercedes",
@@ -364,7 +364,7 @@ export const cars: Car[] = [
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-e-class-sedan-dizel-siyah.jpeg" }
 		],
 		featured: true
-	},
+	},*/
 	{
 		id: "mercedes-e220d",
 		slug: "mercedes-e220d",
@@ -415,8 +415,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/range-rover-sport.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/land-rover-sport-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/land-rover-sport-white.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/range-rover-sport.jpeg" }
 		],
 		featured: true
 	},
@@ -443,8 +443,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/range-rover-velar.jpeg" },
-			{ name: "Kumsal", nameKey: "sand", hex: "#E6D5B8", image: "/land-rover-velar-sand.jpeg" }
+			{ name: "Kumsal", nameKey: "sand", hex: "#E6D5B8", image: "/land-rover-velar-sand.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/range-rover-velar.jpeg" }
 		],
 		featured: true
 	},
@@ -471,8 +471,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-macan-black-new.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/porsche-macan-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/porsche-macan-white.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-macan-black-new.jpeg" }
 		],
 		featured: true
 	},
@@ -555,9 +555,9 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
+			{ name: "Sarı", nameKey: "yellow", hex: "#FFD700", image: "/ford-mustang-sari.jpeg" },
 			{ name: "Lacivert", nameKey: "navy", hex: "#000080", image: "/ford-mustang.jpeg" },
-			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/ford-mustang-grey.jpeg" },
-			{ name: "Sarı", nameKey: "yellow", hex: "#FFD700", image: "/ford-mustang-sari.jpeg" }
+			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/ford-mustang-grey.jpeg" }
 		],
 		featured: true
 	},
@@ -614,8 +614,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-5-series-electric.jpeg" },
 			{ name: "Koyu Kırmızı", nameKey: "dark-red", hex: "#8B0000", image: "/bmw-i5-koyu-kirmizi.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-5-series-electric.jpeg" },
 			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-i5-white.jpeg" }
 		],
 		featured: true
@@ -670,7 +670,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-cabrio.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#3244e3ff", image: "/audi-a5-cabrio.jpeg" },
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-cabrio-kirmizi.jpeg" }
 		],
 		featured: true
@@ -698,12 +698,13 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Yeşil", nameKey: "green", hex: "#2e7d32", image: "/bmw-4-series.jpeg" },
 			{ name: "Mavi", nameKey: "blue", hex: "#1565c0", image: "/bmw-4-series-blue.jpeg" },
+			{ name: "Yeşil", nameKey: "green", hex: "#2e7d32", image: "/bmw-4-series.jpeg" },
 			{ name: "Nardo Gri", nameKey: "nardo-grey", hex: "#8A8D8F", image: "/bmw-4-series-nardo-gri.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-4-series-coupe-black.jpeg" },
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/bmw-4-series-red.jpeg" },
-			{ name: "Turuncu", nameKey: "orange", hex: "#FF8C00", image: "/bmw-4-series-orange.jpeg" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-4-series-coupe-black.jpeg" }
+			{ name: "Turuncu", nameKey: "orange", hex: "#FF8C00", image: "/bmw-4-series-orange.jpeg" }
+			
 		],
 		featured: true
 	},
@@ -842,8 +843,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-eqe.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-eqe-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-eqe-white.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/mercedes-eqe.jpeg" }
 		],
 		featured: true
 	},
@@ -870,8 +871,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-q4-black.jpeg" },
-			{ name: "Metalik Mavi", nameKey: "metallic-blue", hex: "#4682B4", image: "/audi-q4-metallic-blue.jpeg" }
+			{ name: "Metalik Mavi", nameKey: "metallic-blue", hex: "#4682B4", image: "/audi-q4-metallic-blue.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-q4-black.jpeg" }
 		],
 		featured: true
 	},
@@ -898,8 +899,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-x3.jpeg" },
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-x3-black.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-x3.jpeg" },
 			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/bmw-x3-grey.jpeg" }
 		],
 		featured: true
@@ -955,12 +956,12 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
+			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/bmw-3-series-blue-another.jpeg" },
 			{ name: "Lacivert", nameKey: "navy", hex: "#1a237e", image: "/bmw-3-series-sedan.jpeg" },
 			{ name: "Açık Mavi", nameKey: "light-blue", hex: "#4fc3f7", image: "/bmw-3-series-light-blue.jpeg" },
 			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-3-series-white.jpeg" },
 			{ name: "Nardo Gri", nameKey: "nardo-grey", hex: "#8A8A8C", image: "/bmw-3-series-nardo-grey.jpeg" },
 			{ name: "Gümüş Gri", nameKey: "silver-grey", hex: "#C0C0C0", image: "/bmw-3-series-silver-grey.jpeg" },
-			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/bmw-3-series-blue-another.jpeg" },
 			{ name: "Mat Siyah", nameKey: "matte-black", hex: "#1A1A1A", image: "/bmw-3-series-matte-black.jpeg" },
 			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/bmw-3-series-green.jpeg" }
 		],
@@ -1047,8 +1048,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-cla.jpeg" },
-			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/mercedes-cla-red.jpeg" }
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/mercedes-cla-red.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/mercedes-cla.jpeg" }
 		],
 		featured: true
 	},
@@ -1075,8 +1076,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-x1.jpeg" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-x1-white.jpeg" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-x1-white.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-x1.jpeg" }
 		],
 		featured: true
 	},
@@ -1161,8 +1162,8 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-ix1-white.jpeg" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-ix1-black.jpeg" }
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/bmw-ix1-black.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/bmw-ix1-white.jpeg" }
 		],
 		featured: true
 	},
