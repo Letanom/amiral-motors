@@ -30,7 +30,7 @@ export default function FleetPage() {
 			<div className="max-w-xl mx-auto mb-10 group">
 				<div className="relative h-24 rounded-2xl overflow-hidden bg-black/60 border border-white/5 flex items-center justify-center shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:bg-black/80">
 					<Image
-						src="/logom.jpeg"
+						src="/logom.webp"
 						alt="Amiral Motors"
 						fill
 						className="object-contain p-2"

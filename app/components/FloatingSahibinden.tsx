@@ -12,7 +12,7 @@ export default function FloatingSahibinden() {
 				className="block hover:opacity-80 transition transform active:scale-95 shadow-xl rounded-lg overflow-hidden"
 			>
 				<Image
-					src="/Bant_Logo_Sahibinden.png"
+					src="/Bant_Logo_Sahibinden.webp"
 					alt="Sahibinden.com"
 					width={120}
 					height={34}
