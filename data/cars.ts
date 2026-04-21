@@ -499,6 +499,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/defender_beyaz.webp" },
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/land-rover-defender-black-new.webp" },
 			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/land-rover-defender-green.webp" }
 		],
@@ -1133,6 +1134,8 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a3-sedan-black.webp" },
+			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/kirmizi_a3.webp" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/beyaz_a3.webp" },
 			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/audi-a3-sedan.webp" },
 			{ name: "Koyu Yeşil", nameKey: "dark-green", hex: "#006400", image: "/audi-a3-sedan-yesil.webp" },
 			{ name: "Açık Mavi", nameKey: "light-blue", hex: "#ADD8E6", image: "/audi-a3-sedan-light-blue.webp" }
