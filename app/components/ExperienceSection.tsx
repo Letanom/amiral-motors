@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import LazyVideo from "./LazyVideo";
 
 export default function ExperienceSection() {
     const t = useTranslations("experience");
@@ -42,7 +43,7 @@ export default function ExperienceSection() {
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(201,168,76,0.15)] group">
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500 z-10" />
-                            <video 
+                            <LazyVideo 
                                 src="/video2.mp4" 
                                 autoPlay 
                                 loop 
@@ -81,7 +82,7 @@ export default function ExperienceSection() {
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(140,32,22,0.15)] group">
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500 z-10" />
-                            <video 
+                            <LazyVideo 
                                 src="/video4.mp4" 
                                 autoPlay 
                                 loop 
@@ -120,7 +121,7 @@ export default function ExperienceSection() {
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(201,168,76,0.15)] group">
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500 z-10" />
-                            <video 
+                            <LazyVideo 
                                 src="/video3.mp4" 
                                 autoPlay 
                                 loop 

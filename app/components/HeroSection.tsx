@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
@@ -11,11 +11,21 @@ export default function HeroSection() {
 	const t = useTranslations("hero");
 	const prefersReducedMotion = useReducedMotion();
 	const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkMobile = () => setIsMobile(window.innerWidth < 768);
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
 
 	const words = t("title").split(" ");
 
 	const handleVideoEnded = () => {
-		setCurrentVideoIndex((prev) => (prev + 1) % VIDEOS.length);
+		if (!isMobile) {
+			setCurrentVideoIndex((prev) => (prev + 1) % VIDEOS.length);
+		}
 	};
 
 	return (
@@ -31,6 +41,7 @@ export default function HeroSection() {
 						autoPlay
 						muted
 						playsInline
+						preload="metadata"
 						onEnded={handleVideoEnded}
 					/>
 				)}
