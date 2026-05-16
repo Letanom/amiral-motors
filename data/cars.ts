@@ -306,7 +306,8 @@ export const cars: Car[] = [
 		dailyPrice: 0,
 		colors: [
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/porsche-taycan-4s-red.webp" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-taycan.webp" }
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/porsche-taycan-4s-beyaz.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/porsche-taycan-4s-siyah.jpeg" }
 		],
 		featured: true
 	},
@@ -761,7 +762,9 @@ export const cars: Car[] = [
 		colors: [
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-coupe.webp" },
 			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/audi-a5-coupe-mavi.webp" },
-			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/audi-a5-coupe-green.webp" }
+			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/audi-a5-coupe-green.webp" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/audi-a5-coupe-beyaz.jpeg" },
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-coupe-siyah.jpeg" }
 		],
 		featured: true
 	},
