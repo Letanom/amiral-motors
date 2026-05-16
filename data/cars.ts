@@ -422,6 +422,34 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
+		id: "maserati-grecale-gt",
+		slug: "maserati-grecale-gt",
+		brand: "Maserati",
+		model: "Grecale GT SUV",
+		
+		category: "SUV",
+		description: {
+			tr: "İtalyan lüksü ve sportif SUV karakteri.",
+			en: "Italian luxury and sporty SUV character.",
+			ar: "الفخامة الإيطالية وطابع سيارة الدفع الرباعي الرياضية.",
+			de: "Italienischer Luxus und sportlicher SUV-Charakter."
+		},
+		specs: {
+			engine: "petrol",
+			power: "",
+			acceleration: "",
+			seats: 5,
+			transmission: "automatic",
+			drive: ""
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/maserati-grecale-gt-suv.jpeg" },
+			{ name: "Çok Açık Mavi", nameKey: "very-light-blue", hex: "#ADD8E6", image: "/maserati-grecale-gt-suv-cok-acik-mavi.jpeg" }
+		],
+		featured: true
+	},
+	{
 		id: "land-rover-velar",
 		slug: "land-rover-velar",
 		brand: "Land Rover",
@@ -650,6 +678,34 @@ export const cars: Car[] = [
 		featured: true
 	},
 	{
+		id: "audi-a5-sedan",
+		slug: "audi-a5-sedan",
+		brand: "Audi",
+		model: "A5 Sedan",
+		
+		category: "Sedan",
+		description: {
+			tr: "Zarif sedan tasarımı ve konforlu sürüş.",
+			en: "Elegant sedan design and comfortable driving.",
+			ar: "تصميم سيدان أنيق وقيادة مريحة.",
+			de: "Elegantes Sedan-Design und komfortables Fahren."
+		},
+		specs: {
+			engine: "petrol",
+			power: "",
+			acceleration: "",
+			seats: 5,
+			transmission: "automatic",
+			drive: ""
+		},
+		dailyPrice: 0,
+		colors: [
+			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-siyah.jpeg" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/audi-a5-beyaz.jpeg" }
+		],
+		featured: true
+	},
+	{
 		id: "audi-a5-cabrio",
 		slug: "audi-a5-cabrio",
 		brand: "Audi",
@@ -762,9 +818,7 @@ export const cars: Car[] = [
 		colors: [
 			{ name: "Kırmızı", nameKey: "red", hex: "#FF0000", image: "/audi-a5-coupe.webp" },
 			{ name: "Mavi", nameKey: "blue", hex: "#0000FF", image: "/audi-a5-coupe-mavi.webp" },
-			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/audi-a5-coupe-green.webp" },
-			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/audi-a5-coupe-beyaz.jpeg" },
-			{ name: "Siyah", nameKey: "black", hex: "#000000", image: "/audi-a5-coupe-siyah.jpeg" }
+			{ name: "Yeşil", nameKey: "green", hex: "#008000", image: "/audi-a5-coupe-green.webp" }
 		],
 		featured: true
 	},
