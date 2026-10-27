@@ -1,29 +1,479 @@
 @import "tailwindcss";
 
+/*
+ * Night showroom: black floor, studio-lit cars, white type.
+ * Archivo carries everything; its wide cut (wdth 125) is reserved for car names
+ * and headlines, the way badges are lettered on a bootlid. Red belongs to the logo.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--f-sans: var(--font-archivo);
+	color-scheme: dark;
+}
+
+:root:lang(ar) {
+	--f-sans: var(--font-plex-arabic);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+	--color-bg: #0b0b0c;
+	--color-surface: #151517;
+	--color-raised: #1d1d20;
+	--color-fg: #f3f2ef;
+	--color-muted: #9b9a96;
+	--color-line: rgb(255 255 255 / 0.1);
+	--color-signal: #d32a1f;
+
+	--font-sans: var(--f-sans), system-ui, sans-serif;
+
+	--ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+	scroll-padding-top: 5rem;
+	background-color: var(--color-bg);
 }
 
+/* The ground colour lives on html only: a body background would paint over fixed -z backdrops (About page). */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, sans-serif;
+	color: var(--color-fg);
 }
 
-.font-display {
-  font-family: var(--font-playfair), Georgia, 'Times New Roman', Times, serif;
+/* Card glows bleed 40px past their box; clip keeps that from widening the page without breaking sticky. */
+main {
+	overflow-x: clip;
+}
+
+::selection {
+	background: var(--color-fg);
+	color: var(--color-bg);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-fg);
+	outline-offset: 3px;
+}
+
+/* Wide, tight headline cut. */
+@utility wide {
+	font-stretch: 125%;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	line-height: 1;
+	text-wrap: balance;
+}
+
+/* Small spaced capitals for eyebrows and spec keys. */
+@utility eyebrow {
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+:lang(ar) .wide,
+:lang(ar) .eyebrow {
+	font-stretch: 100%;
+	letter-spacing: 0;
+	line-height: 1.3;
+}
+
+/* One orchestrated entrance on load; content is never hidden at rest. */
+.enter {
+	animation: enter 0.9s var(--ease-out-quint) both;
+	animation-delay: var(--d, 0ms);
+}
+
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+}
+
+.img-in {
+	animation: img-in 0.5s ease both;
+}
+
+@keyframes img-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.enter,
+	.img-in {
+		animation: none;
+	}
+}
+
+.no-scrollbar {
+	scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/*
+ * Light-beam reservation button: a red beam circles the pill's 1px edge.
+ * The conic gradient rotates via a registered custom property so it animates smoothly.
+ */
+@property --beam-angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.beam {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	border-radius: 9999px;
+	background: var(--color-bg);
+	color: var(--color-fg);
+	box-shadow: 0 0 22px -6px rgb(211 42 31 / 0.45);
+	transition:
+		box-shadow 0.4s ease,
+		transform 0.2s ease;
+}
+
+.beam::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	border-radius: inherit;
+	background: conic-gradient(
+		from var(--beam-angle),
+		transparent 0%,
+		var(--color-signal) 38%,
+		#ff7a5c 50%,
+		transparent 62%,
+		transparent 100%
+	);
+	animation: beam-spin 2.4s linear infinite;
+}
+
+.beam::after {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	z-index: -1;
+	border-radius: inherit;
+	background:
+		radial-gradient(circle at 50% 0%, rgb(211 42 31 / 0.16), transparent 65%),
+		var(--color-bg);
+	transition: background 0.4s ease;
+}
+
+.beam:hover {
+	box-shadow: 0 0 30px -4px rgb(211 42 31 / 0.65);
+	transform: scale(1.02);
+}
+
+.beam:hover::after {
+	background:
+		radial-gradient(circle at 50% 0%, rgb(211 42 31 / 0.3), transparent 70%),
+		#121213;
+}
+
+.beam:active {
+	transform: scale(0.98);
+}
+
+@keyframes beam-spin {
+	to {
+		--beam-angle: 360deg;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.beam::before {
+		animation: none;
+	}
+}
+
+/*
+ * Glowing-edge car card: the edge nearest the pointer lights up in warm reds.
+ * CarCard writes --pointer-deg (direction from the centre) and --pointer-d
+ * (0 at the centre, 100 at the edge); conic masks keep the light on that side.
+ */
+.glow-card {
+	--pointer-deg: 45deg;
+	--pointer-d: 0;
+	--glow-sens: 30;
+	--color-sens: 50;
+	--glow-color: 8deg 92% 62%;
+	position: relative;
+	isolation: isolate;
+	border-radius: 0.875rem;
+}
+
+.glow-card__edge,
+.glow-card__glow {
+	position: absolute;
+	border-radius: inherit;
+	pointer-events: none;
+	transition: opacity 0.25s ease-out;
+}
+
+/* Warm mesh painted only into the 1px border box, masked to the pointer's side. */
+.glow-card__edge {
+	inset: 0;
+	z-index: 0;
+	border: 1px solid transparent;
+	background:
+		linear-gradient(var(--color-surface) 0 100%) padding-box,
+		radial-gradient(at 80% 55%, hsl(4 85% 55%) 0px, transparent 50%) border-box,
+		radial-gradient(at 15% 20%, hsl(20 95% 62%) 0px, transparent 50%) border-box,
+		radial-gradient(at 50% 0%, hsl(350 80% 52%) 0px, transparent 50%) border-box,
+		radial-gradient(at 85% 90%, hsl(32 100% 74%) 0px, transparent 50%) border-box,
+		radial-gradient(at 10% 85%, hsl(8 90% 60%) 0px, transparent 50%) border-box,
+		linear-gradient(var(--color-signal) 0 100%) border-box;
+	opacity: calc((var(--pointer-d) - var(--color-sens)) / (100 - var(--color-sens)));
+	mask-image: conic-gradient(from var(--pointer-deg) at center, black 25%, transparent 40%, transparent 60%, black 75%);
+}
+
+/* Soft light bleeding in and out of the edge. */
+.glow-card__glow {
+	inset: -40px;
+	z-index: 20;
+	opacity: calc((var(--pointer-d) - var(--glow-sens)) / (100 - var(--glow-sens)));
+	mask-image: conic-gradient(from var(--pointer-deg) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+	mix-blend-mode: plus-lighter;
+}
+
+.glow-card__glow::before {
+	content: "";
+	position: absolute;
+	inset: 40px;
+	border-radius: inherit;
+	box-shadow:
+		inset 0 0 0 1px hsl(var(--glow-color) / 100%),
+		inset 0 0 3px 0 hsl(var(--glow-color) / 50%),
+		inset 0 0 8px 0 hsl(var(--glow-color) / 35%),
+		inset 0 0 20px 0 hsl(var(--glow-color) / 20%),
+		0 0 2px 0 hsl(var(--glow-color) / 60%),
+		0 0 8px 0 hsl(var(--glow-color) / 40%),
+		0 0 20px 1px hsl(var(--glow-color) / 25%),
+		0 0 45px 2px hsl(var(--glow-color) / 12%);
+}
+
+.glow-card__body {
+	position: relative;
+	z-index: 10;
+	height: 100%;
+	border-radius: inherit;
+	border: 1px solid rgb(255 255 255 / 0.08);
+	background: var(--color-surface);
+}
+
+.glow-card:not(:hover) .glow-card__edge,
+.glow-card:not(:hover) .glow-card__glow {
+	opacity: 0;
+	transition: opacity 0.75s ease-in-out;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+	.glow-card__edge,
+	.glow-card__glow {
+		display: none;
+	}
+}
+
+/* Paint-reflection sheen: a light band sweeps across the primary button on hover. */
+.sheen {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.sheen::after {
+	content: "";
+	position: absolute;
+	inset: -20% auto -20% -60%;
+	width: 45%;
+	z-index: 1;
+	pointer-events: none;
+	background: linear-gradient(105deg, transparent 0%, rgb(255 255 255 / 0.85) 45%, rgb(255 214 200 / 0.6) 55%, transparent 100%);
+	transform: skewX(-18deg) translateX(0);
+	opacity: 0;
+}
+
+.sheen:hover::after {
+	opacity: 1;
+	transform: skewX(-18deg) translateX(420%);
+	transition: transform 0.9s var(--ease-out-quint), opacity 0.2s ease;
+}
+
+.sheen > * {
+	position: relative;
+	z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sheen::after {
+		display: none;
+	}
+}
+
+/*
+ * Pinned poster hero (HeroPoster): the section is taller than the screen and its
+ * stage sticks for the extra height. --p runs 0 → 1 across that scroll:
+ * the AMIRAL wordmark shrinks and fades, then the claim and buttons take the frame.
+ */
+.poster {
+	--p: 0;
+	--claim: clamp(0, calc((var(--p) - 0.55) / 0.3), 1);
+	position: relative;
+	height: 220svh;
+}
+
+.poster__stage {
+	position: sticky;
+	top: 0;
+	height: 100svh;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.poster__word {
+	font-weight: 900;
+	font-stretch: 63%;
+	letter-spacing: -0.02em;
+	line-height: 0.8;
+	text-transform: uppercase;
+	/* Sized from its six letters so it never clips at narrow widths. */
+	font-size: min(clamp(4rem, 33vw, 40rem), calc(94vw / (6 * 0.56)));
+	transform: scale(calc(1 - max(0, var(--p) - 0.3) * 0.5));
+	/* Holds fully opaque while the car pulls away behind it, then fades. */
+	opacity: calc(1 - max(0, var(--p) - 0.36) * 4);
+	will-change: transform, opacity;
+}
+
+.poster__meta {
+	opacity: calc(1 - var(--p) * 3);
+}
+
+.poster__claim {
+	opacity: var(--claim);
+	transform: translateY(calc((1 - var(--claim)) * 28px));
+}
+
+.poster[data-stage="name"] .poster__claim {
+	visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.poster {
+		height: auto;
+	}
+
+	.poster__stage {
+		position: relative;
+		height: auto;
+		min-height: 100svh;
+	}
+
+	.poster__word,
+	.poster__meta {
+		display: none;
+	}
+
+	.poster__claim {
+		opacity: 1;
+		transform: none;
+		visibility: visible;
+	}
+}
+
+/* Scroll cue under the poster: a hairline with a short segment sliding down it. */
+.scroll-cue {
+	position: relative;
+	display: block;
+	width: 1px;
+	height: 2.25rem;
+	overflow: hidden;
+	background: rgb(255 255 255 / 0.15);
+}
+
+.scroll-cue::after {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto;
+	height: 40%;
+	background: var(--color-signal);
+	animation: scroll-cue 1.8s var(--ease-out-quint) infinite;
+}
+
+@keyframes scroll-cue {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(250%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scroll-cue::after {
+		animation: none;
+	}
+}
+
+/*
+ * Small tail-light silhouette idling under the poster wordmark (TaillightCar). It fills the
+ * flexible band between the tagline and the scroll cue, sized by that band's height so
+ * short screens shrink it instead of overlapping text. --go runs 0 → 1 over the first 38%
+ * of the poster scroll, while the wordmark is still fully opaque: the car shrinks toward
+ * its own light bar and fades, and lagging copies of the bar smear behind it.
+ */
+.car-away {
+	--go: clamp(0, calc(var(--p) / 0.38), 1);
+	position: relative;
+	height: min(100%, 12rem);
+	aspect-ratio: 1000 / 420;
+	max-width: clamp(200px, 32vw, 460px);
+	pointer-events: none;
+}
+
+.car-away svg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	/* Vanishing point: the light bar's centre. */
+	transform-origin: 50% 55%;
+	will-change: transform, opacity;
+}
+
+.car-away__car {
+	transform: translateY(calc(var(--go) * -4vh)) scale(calc(1 - var(--go) * 0.92));
+	opacity: calc(1 - max(0, var(--go) - 0.6) * 2.5);
+}
+
+.car-away__smear {
+	transform: translateY(calc(var(--go) * -4vh * (1 - var(--lag) * 0.2))) scale(calc(1 - var(--go) * 0.92 * (1 - var(--lag) * 0.18)));
+	opacity: calc(var(--go) * (1 - var(--go)) * 2.6 / var(--lag));
+}
+
+/* Idling: the light bar breathes while the car waits. */
+.car-away__lamp {
+	animation: lamp-idle 3.4s ease-in-out infinite;
+}
+
+@keyframes lamp-idle {
+	50% {
+		opacity: 0.75;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.car-away {
+		display: none;
+	}
 }

@@ -1,73 +1,61 @@
-"use client";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import MoltenField from "../../components/MoltenField";
 
-export default function AboutPage() {
-	const t = useTranslations("about");
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "meta" });
+	return { title: t("aboutTitle"), alternates: { canonical: `/${locale}/about` } };
+}
+
+const YEARS = ["2014", "2019", "2020", "2025"];
+
+export default async function AboutPage({ params }: Props) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+	const t = await getTranslations();
 
 	return (
-		<div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
-			{/* Background Elements */}
-			<div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#8c2016]/5 blur-[120px] rounded-full" />
-			<div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#8c2016]/5 blur-[120px] rounded-full" />
+		<div className="mx-auto max-w-[1320px] px-4 pt-12 sm:px-6 lg:px-10 lg:pt-16">
+			<MoltenField className="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-45" />
+			<header className="enter max-w-3xl">
+				<p className="eyebrow">{t("about.title")}</p>
+				<h1 className="wide mt-5 text-4xl sm:text-6xl">{t("about.lead")}</h1>
+			</header>
 
-			<div className="max-w-4xl mx-auto px-4 relative z-10">
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-				>
-					<h1 className="text-4xl md:text-5xl font-display font-semibold mb-8 text-white">
-						{t("title")}
-					</h1>
-					
-					<div className="space-y-8 text-lg leading-relaxed text-white/80 font-light">
-						<motion.p 
-							initial={{ opacity: 0, x: -20 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.2, duration: 0.6 }}
-						>
-							{t("p1")}
-						</motion.p>
+			<div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-12">
+				<div className="space-y-6 text-lg leading-relaxed text-fg/85 lg:col-span-6">
+					<p>{t("about.p1")}</p>
+					<p className="text-muted">{t("about.p3")}</p>
+					<p className="text-muted">{t("about.p4")}</p>
+				</div>
 
-						<motion.p
-							initial={{ opacity: 0, x: -20 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.3, duration: 0.6 }}
-						>
-							{t("p2")}
-						</motion.p>
-
-						<motion.p
-							initial={{ opacity: 0, x: -20 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.4, duration: 0.6 }}
-						>
-							{t("p3")}
-						</motion.p>
-
-						<motion.p
-							initial={{ opacity: 0, x: -20 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ delay: 0.5, duration: 0.6 }}
-						>
-							{t("p4")}
-						</motion.p>
-					</div>
-
-					<motion.div 
-						initial={{ opacity: 0, scale: 0.95 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ delay: 0.7, duration: 0.6 }}
-						className="mt-16 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center"
-					>
-						<p className="text-xl md:text-2xl font-display font-medium text-white italic">
-							"{t("footer")}"
-						</p>
-					</motion.div>
-				</motion.div>
+				<section className="lg:col-span-5 lg:col-start-8">
+					<h2 className="eyebrow">{t("about.timelineLabel")}</h2>
+					<ol className="mt-6">
+						{YEARS.map((year) => (
+							<li key={year} className="grid grid-cols-[5.5rem_1fr] gap-4 border-t border-line py-5">
+								<span className="wide text-xl tabular-nums">{year}</span>
+								<span className="leading-relaxed text-muted">{t(`about.y${year}`)}</span>
+							</li>
+						))}
+					</ol>
+				</section>
 			</div>
+
+			<section className="mt-24">
+				<h2 className="eyebrow">{t("about.sectorsLabel")}</h2>
+				<div className="mt-6 grid gap-3 sm:grid-cols-3">
+					{[t("about.rental"), t("footer.construction"), t("footer.textile")].map((s) => (
+						<div key={s} className="rounded-md bg-surface px-6 py-8 text-xl font-medium">
+							{s}
+						</div>
+					))}
+				</div>
+				<p className="wide mx-auto mt-24 max-w-3xl text-center text-2xl text-muted sm:text-3xl">{t("about.footer")}</p>
+			</section>
 		</div>
 	);
 }
-

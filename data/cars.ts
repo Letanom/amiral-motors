@@ -52,7 +52,7 @@ export const cars: Car[] = [
 		},
 		dailyPrice: 0,
 		colors: [
-			{ name: "Gri", nameKey: "grey", hex: "#808080", image: "/lamborghini-huracan.webp" },
+			{ name: "Beyaz", nameKey: "white", hex: "#FFFFFF", image: "/lamborghini-huracan.webp" },
 			{ name: "Koyu Yeşil", nameKey: "dark-green", hex: "#006400", image: "/lamborghini-huracan-dark-green.webp" }
 		],
 		featured: true

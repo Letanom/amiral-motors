@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
 import { locales } from "../i18n.config";
 import { cars } from "../data/cars";
+import { SITE_URL } from "../lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const base = "https://amiral-group.example.com";
-	const routes = ["", "/fleet", "/about", "/contact"].flatMap((p) =>
+	const base = SITE_URL;
+	const routes = ["", "/fleet", "/gallery", "/about", "/contact"].flatMap((p) =>
 		locales.map((l) => ({
 			url: `${base}/${l}${p}`,
 			lastModified: new Date(),

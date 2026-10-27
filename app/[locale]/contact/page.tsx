@@ -1,120 +1,120 @@
-import WhatsAppButton from "../../components/WhatsAppButton";
-import { FaMapMarkerAlt, FaWhatsapp, FaBuilding } from "react-icons/fa";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ArrowUpRight, Phone } from "lucide-react";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { whatsappLink } from "../../../lib/fleet";
+import { BRANCHES, INSTAGRAM_URL, PHONE, SAHIBINDEN_URL, WHATSAPP_LINES } from "../../../lib/site";
+import SahibindenBadge from "../../components/SahibindenBadge";
 
-export const metadata = {
-	title: "İletişim | AMİRAL GROUP",
-	description: "AMİRAL GROUP iletişim ve WhatsApp üzerinden hızlı ulaşım."
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function ContactPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "meta" });
+	return {
+		title: t("contactTitle"),
+		description: t("contactDescription"),
+		alternates: { canonical: `/${locale}/contact` }
+	};
+}
+
+const row =
+	"group flex items-center justify-between gap-4 rounded-md border border-line bg-surface px-5 py-5 transition-colors hover:border-white/30";
+
+export default async function ContactPage({ params }: Props) {
+	const { locale } = await params;
+	setRequestLocale(locale);
+	const t = await getTranslations();
+
 	return (
-		<div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
-			{/* Background Elements */}
-			<div className="absolute top-0 right-0 w-1/3 h-1/3 bg-[#8c2016]/5 blur-[120px] rounded-full" />
-			<div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#8c2016]/5 blur-[120px] rounded-full" />
+		<div className="mx-auto max-w-[1320px] px-4 pt-12 sm:px-6 lg:px-10 lg:pt-16">
+			<header className="enter max-w-2xl">
+				<h1 className="wide text-4xl sm:text-6xl">{t("contact.title")}</h1>
+				<p className="mt-5 text-lg leading-relaxed text-muted">{t("contact.lead")}</p>
+			</header>
 
-			<div className="max-w-6xl mx-auto px-4 relative z-10">
-				<h1 className="text-4xl md:text-5xl font-display font-semibold mb-12 text-white text-center">İletişim</h1>
-				
-				<div className="grid gap-12 lg:grid-cols-3">
-					{/* Contacts Column */}
-					<div className="space-y-6 lg:col-span-1">
-						<h2 className="text-2xl font-display font-medium text-white/90 mb-6 flex items-center gap-3">
-							<FaWhatsapp className="text-green-500" /> WhatsApp Hatlarımız
-						</h2>
-						
-						<div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#8c2016]/50 transition duration-300">
-							<h3 className="text-lg font-semibold text-white mb-1">WhatsApp Hattı 1</h3>
-							<p className="text-white/50 text-xs mb-4 uppercase tracking-wider">Satış ve Kiralama Destek</p>
-							<WhatsAppButton 
-								phone="905316350034"
-								displayPhone="+90 531 635 00 34"
-								className="w-full justify-center py-2 text-sm"
-							/>
-						</div>
+			<div className="mt-14 grid gap-14 lg:grid-cols-2 lg:gap-12">
+				<section className="flex flex-col gap-3">
+					<h2 className="eyebrow mb-2">{t("contact.whatsappTitle")}</h2>
+					{WHATSAPP_LINES.map((line, i) => (
+						<a key={line.id} href={whatsappLink(t("whatsapp.message"), i)} target="_blank" rel="noopener noreferrer" className={row}>
+							<span className="flex items-center gap-4">
+								<FaWhatsapp className="text-2xl text-[#25d366]" />
+								<span>
+									<span className="block text-sm text-muted">{i === 0 ? t("contact.line1Desc") : t("contact.line2Desc")}</span>
+									<span dir="ltr" className="mt-0.5 block text-xl font-medium tabular-nums">
+										{line.display}
+									</span>
+								</span>
+							</span>
+							<ArrowUpRight size={18} strokeWidth={1.75} className="text-muted transition-colors group-hover:text-fg rtl:-scale-x-100" />
+						</a>
+					))}
 
-						<div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#8c2016]/50 transition duration-300">
-							<h3 className="text-lg font-semibold text-white mb-1">WhatsApp Hattı 2</h3>
-							<p className="text-white/50 text-xs mb-4 uppercase tracking-wider">VIP Transfer ve Rezervasyon</p>
-							<WhatsAppButton 
-								phone="905326599934"
-								displayPhone="+90 532 659 99 34"
-								className="w-full justify-center py-2 text-sm"
-							/>
-						</div>
+					<h2 className="eyebrow mt-8 mb-2">{t("contact.callCenter")}</h2>
+					<a href={PHONE.href} className={row}>
+						<span className="flex items-center gap-4">
+							<Phone size={22} strokeWidth={1.5} className="text-muted" />
+							<span>
+								<span className="block text-sm text-muted">{t("contact.hours")}</span>
+								<span dir="ltr" className="mt-0.5 block text-xl font-medium tabular-nums">
+									{PHONE.display}
+								</span>
+							</span>
+						</span>
+						<ArrowUpRight size={18} strokeWidth={1.75} className="text-muted transition-colors group-hover:text-fg rtl:-scale-x-100" />
+					</a>
+
+					<h2 className="eyebrow mt-8 mb-2">{t("contact.elsewhere")}</h2>
+					<div className="grid grid-cols-2 gap-3">
+						<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={row}>
+							<span className="flex items-center gap-3">
+								<FaInstagram className="text-xl" /> Instagram
+							</span>
+						</a>
+						<a href={SAHIBINDEN_URL} target="_blank" rel="noopener noreferrer" className={row}>
+							<SahibindenBadge />
+							<ArrowUpRight size={18} strokeWidth={1.75} className="text-muted transition-colors group-hover:text-fg rtl:-scale-x-100" />
+						</a>
 					</div>
+				</section>
 
-					{/* Branches Column */}
-					<div className="lg:col-span-2 space-y-8">
-						<h2 className="text-2xl font-display font-medium text-white/90 mb-6 flex items-center gap-3">
-							<FaBuilding className="text-[#8c2016]" /> Şubelerimiz
-						</h2>
-						
-						{/* Interactive Map (Skyland Residence as default) */}
-						<div className="rounded-3xl overflow-hidden border border-white/10 h-80 relative flex flex-col group shadow-2xl mb-8">
-							<iframe
-								src="https://maps.google.com/maps?q=Skyland+Residence+Istanbul&z=15&output=embed"
-								width="100%"
-								height="100%"
-								style={{ border: 0 }}
-								allowFullScreen={true}
-								loading="lazy"
-								referrerPolicy="no-referrer-when-downgrade"
-								className="absolute inset-0 w-full h-full grayscale-[20%] contrast-[1.1] opacity-90 transition-opacity duration-300 group-hover:opacity-100"
-							></iframe>
-						</div>
-
-						<div className="grid md:grid-cols-2 gap-6">
-							{/* Istanbul Branch */}
-							<div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:border-[#8c2016]/30 transition duration-300 group">
-								<div className="flex items-center gap-3 mb-4">
-									<div className="w-10 h-10 rounded-full bg-[#8c2016]/10 flex items-center justify-center group-hover:bg-[#8c2016]/20 transition">
-										<FaMapMarkerAlt className="text-[#8c2016]" />
-									</div>
-									<h3 className="text-xl font-semibold text-white">İstanbul Şubesi</h3>
-								</div>
-								<p className="text-white/70 leading-relaxed font-light mb-6 text-sm">
-									Huzur Mahallesi Azerbaycan Caddesi No:4 <br />
-									Skyland Residence B Blok Daire: 150 <br />
-									Sarıyer / İstanbul
+				<section>
+					<h2 className="eyebrow mb-5">{t("contact.branchesTitle")}</h2>
+					<div className="overflow-hidden rounded-lg border border-line">
+						<iframe
+							title={t("contact.istanbul")}
+							src={BRANCHES[0].embed}
+							loading="lazy"
+							referrerPolicy="no-referrer-when-downgrade"
+							className="block h-72 w-full border-0 grayscale invert-[0.9] hue-rotate-180"
+						/>
+					</div>
+					<div className="mt-6 grid gap-6 sm:grid-cols-2">
+						{BRANCHES.map((b) => (
+							<div key={b.id} className="border-t border-line pt-5">
+								<h3 className="text-lg font-medium">{t(`contact.${b.id}`)}</h3>
+								<p className="mt-2 text-sm leading-relaxed text-muted">
+									{b.lines.map((l) => (
+										<span key={l} className="block">
+											{l}
+										</span>
+									))}
 								</p>
 								<a
-									href="https://maps.google.com/?q=Skyland+Residence+Istanbul"
+									href={b.map}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-sm font-medium text-[#8c2016] hover:underline"
+									className="mt-4 inline-flex items-center gap-1.5 text-sm underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
 								>
-									Haritada Görüntüle →
+									{t("contact.viewMap")}
+									<ArrowUpRight size={14} strokeWidth={1.75} className="rtl:-scale-x-100" />
 								</a>
 							</div>
-
-							{/* Bodrum Branch */}
-							<div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 hover:border-[#8c2016]/30 transition duration-300 group">
-								<div className="flex items-center gap-3 mb-4">
-									<div className="w-10 h-10 rounded-full bg-[#8c2016]/10 flex items-center justify-center group-hover:bg-[#8c2016]/20 transition">
-										<FaMapMarkerAlt className="text-[#8c2016]" />
-									</div>
-									<h3 className="text-xl font-semibold text-white">Bodrum Şubesi</h3>
-								</div>
-								<p className="text-white/70 leading-relaxed font-light mb-6 text-sm">
-									Küçükbük Mahallesi 42. Sokak <br />
-									Kanyon Sitesi No:27 <br />
-									Türkbükü Bodrum / Muğla
-								</p>
-								<a
-									href="https://maps.google.com/?q=Türkbükü+Bodrum+Küçükbük+Mahallesi+42.+Sokak+Kanyon+Sitesi+No:27"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-sm font-medium text-[#8c2016] hover:underline"
-								>
-									Haritada Görüntüle →
-								</a>
-							</div>
-						</div>
+						))}
 					</div>
-				</div>
+				</section>
 			</div>
 		</div>
 	);
 }
-
