@@ -68,6 +68,8 @@ export default function HeroGlow({ className }: { className?: string }) {
 		return (
 			runShader(ref.current, {
 				fragment: FRAG,
+				// A soft wash: half resolution looks identical and costs a quarter of the pixels.
+				maxDpr: 0.5,
 				setup: ({ gl, uniform }) => gl.uniform3fv(uniform("uColors"), COLORS.flatMap(hexToRgb)),
 				update: ({ gl, uniform }, ms) => gl.uniform1f(uniform("uTime"), ms * 0.0003),
 				stillTime: 20000

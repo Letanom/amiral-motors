@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
  * Pinned poster hero. A tall section whose sticky inner stage stays on screen while
  * the visitor scrolls through it; scroll progress (0 → 1) is written to --p and all
  * hand-overs (wordmark out, claim in) are computed from it in CSS.
- * data-stage flips to "claim" once the claim starts fading in (p > 0.55) so hidden buttons can't take focus.
+ * data-stage flips to "claim" once the claim starts fading in (p > 0.45) so hidden buttons can't take focus.
  */
 export default function HeroPoster({ children }: { children: React.ReactNode }) {
 	const ref = useRef<HTMLElement>(null);
@@ -25,7 +25,7 @@ export default function HeroPoster({ children }: { children: React.ReactNode }) 
 			const travel = rect.height - window.innerHeight;
 			const p = travel > 0 ? Math.min(Math.max(-rect.top / travel, 0), 1) : 1;
 			section.style.setProperty("--p", p.toFixed(4));
-			section.dataset.stage = p > 0.55 ? "claim" : "name";
+			section.dataset.stage = p > 0.45 ? "claim" : "name";
 		};
 		const schedule = () => {
 			if (!raf) raf = requestAnimationFrame(measure);

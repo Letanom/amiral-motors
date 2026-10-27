@@ -42,7 +42,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 		<>
 			{/* Hero */}
 			<HeroPoster>
-				<HeroGlow className="pointer-events-none absolute inset-x-0 top-0 h-[85%] w-full opacity-60 [mask-image:linear-gradient(to_bottom,black_20%,transparent)]" />
+				<HeroGlow className="pointer-events-none absolute inset-x-0 top-0 h-[85%] w-full opacity-60" />
 				<div className="pointer-events-none absolute inset-x-0 bottom-0 z-[6] h-40 bg-gradient-to-b from-transparent to-bg" aria-hidden />
 
 				{/* Opening frame: the name at poster scale, the car below it, the meta row at the foot. */}
@@ -100,7 +100,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 							</Link>
 
 							{/* One glass pill, two channels: WhatsApp on one side, the sahibinden.com showroom on the other. */}
-							<div className="inline-flex h-14 items-stretch rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-md">
+							<div className="inline-flex h-14 items-stretch rounded-full border border-white/15 bg-white/[0.06]">
 								<a
 									href={whatsappLink(t("whatsapp.message"))}
 									target="_blank"

@@ -7,10 +7,12 @@
 
 const BAR = "M150 232 C 172 221, 204 217, 246 217 L 754 217 C 796 217, 828 221, 850 232";
 
+// The halo is a radial gradient rather than a blur filter: filters re-rasterise on every
+// scroll frame as the car scales, gradients don't.
 function Bar({ id, idle = false }: { id: string; idle?: boolean }) {
 	return (
 		<>
-			<path d={BAR} stroke={`url(#${id}-glow)`} strokeWidth="46" strokeLinecap="round" fill="none" filter={`url(#${id}-blur)`} opacity="0.6" />
+			<ellipse cx="500" cy="226" rx="420" ry="44" fill={`url(#${id}-halo)`} />
 			<path d={BAR} stroke={`url(#${id}-lamp)`} strokeWidth="9" strokeLinecap="round" fill="none" className={idle ? "car-away__lamp" : undefined} />
 			<path d={BAR} stroke="#ffd2c8" strokeWidth="1.6" strokeLinecap="round" fill="none" opacity="0.55" />
 		</>
@@ -48,27 +50,24 @@ export default function TaillightCar({ className }: { className?: string }) {
 						<stop offset="0.88" stopColor="#d32a1f" />
 						<stop offset="1" stopColor="#ff4a38" />
 					</linearGradient>
-					<linearGradient id={`${id}-glow`} x1="0" y1="0" x2="1" y2="0">
-						<stop offset="0" stopColor="#ff3a28" />
-						<stop offset="0.5" stopColor="#d32a1f" />
-						<stop offset="1" stopColor="#ff3a28" />
-					</linearGradient>
+					<radialGradient id={`${id}-halo`} cx="0.5" cy="0.5" r="0.5">
+						<stop offset="0" stopColor="#e3321f" stopOpacity="0.55" />
+						<stop offset="0.55" stopColor="#d32a1f" stopOpacity="0.22" />
+						<stop offset="1" stopColor="#d32a1f" stopOpacity="0" />
+					</radialGradient>
 					<radialGradient id={`${id}-pool`} cx="0.5" cy="0.5" r="0.5">
 						<stop offset="0" stopColor="#d32a1f" stopOpacity="0.45" />
 						<stop offset="1" stopColor="#d32a1f" stopOpacity="0" />
 					</radialGradient>
-					{/* Fixed user-space region: the bar's own bounding box is only a few units tall and would clip the halo square. */}
-					<filter id={`${id}-blur`} filterUnits="userSpaceOnUse" x="40" y="120" width="920" height="220">
-						<feGaussianBlur stdDeviation="14" />
-					</filter>
-					<filter id={`${id}-soft`} x="-10%" y="-50%" width="120%" height="200%">
-						<feGaussianBlur stdDeviation="6" />
-					</filter>
+					<radialGradient id={`${id}-shadow`} cx="0.5" cy="0.5" r="0.5">
+						<stop offset="0" stopColor="#000" stopOpacity="0.75" />
+						<stop offset="1" stopColor="#000" stopOpacity="0" />
+					</radialGradient>
 				</defs>
 
-				{/* Red light pooling on the road under the bar. */}
+				{/* Red light pooling on the road under the bar, and the car's shadow. */}
 				<ellipse cx="500" cy="392" rx="430" ry="34" fill={`url(#${id}-pool)`} />
-				<ellipse cx="500" cy="378" rx="400" ry="16" fill="#000" opacity="0.7" filter={`url(#${id}-soft)`} />
+				<ellipse cx="500" cy="378" rx="410" ry="22" fill={`url(#${id}-shadow)`} />
 
 				{/* Tyres. */}
 				<rect x="96" y="318" width="118" height="68" rx="16" fill="#060607" />

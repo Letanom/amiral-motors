@@ -327,9 +327,9 @@ main {
  */
 .poster {
 	--p: 0;
-	--claim: clamp(0, calc((var(--p) - 0.55) / 0.3), 1);
+	--claim: clamp(0, calc((var(--p) - 0.45) / 0.3), 1);
 	position: relative;
-	height: 220svh;
+	height: 165svh;
 }
 
 .poster__stage {
@@ -348,9 +348,9 @@ main {
 	text-transform: uppercase;
 	/* Sized from its six letters so it never clips at narrow widths. */
 	font-size: min(clamp(4rem, 33vw, 40rem), calc(94vw / (6 * 0.56)));
-	transform: scale(calc(1 - max(0, var(--p) - 0.3) * 0.5));
-	/* Holds fully opaque while the car pulls away behind it, then fades. */
-	opacity: calc(1 - max(0, var(--p) - 0.36) * 4);
+	/* Starts shrinking on the first wheel tick so the pinned frame never feels stuck. */
+	transform: scale(calc(1 - var(--p) * 0.3));
+	opacity: calc(1 - max(0, var(--p) - 0.22) * 3.4);
 	will-change: transform, opacity;
 }
 
@@ -432,7 +432,7 @@ main {
  * its own light bar and fades, and lagging copies of the bar smear behind it.
  */
 .car-away {
-	--go: clamp(0, calc(var(--p) / 0.38), 1);
+	--go: clamp(0, calc(var(--p) / 0.34), 1);
 	position: relative;
 	height: min(100%, 12rem);
 	aspect-ratio: 1000 / 420;

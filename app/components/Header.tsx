@@ -64,7 +64,7 @@ export default function Header() {
 
 	return (
 		<>
-			<header className="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+			<header className="sticky top-0 z-40 border-b border-line bg-bg/95">
 				<div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between gap-6 px-4 sm:px-6 lg:h-[4.5rem] lg:px-10">
 					<Link href="/" className="shrink-0">
 						<Wordmark />
@@ -130,8 +130,8 @@ export default function Header() {
 			</header>
 
 			{/*
-			  Sibling of <header>, not a child: the header's backdrop-filter makes it the containing
-			  block for fixed descendants, which would collapse this overlay to zero height.
+			  Sibling of <header>, not a child: if the header ever gets a backdrop-filter or transform
+			  again, it would become the containing block for fixed descendants and collapse this overlay.
 			*/}
 			<div id="mobile-menu" hidden={!menuOpen} className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-bg lg:hidden">
 					<nav className="flex flex-col px-4 pt-4 sm:px-6">

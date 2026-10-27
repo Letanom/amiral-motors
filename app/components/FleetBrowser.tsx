@@ -42,7 +42,7 @@ export default function FleetBrowser() {
 
 	return (
 		<>
-			<div className="sticky top-16 z-20 -mx-4 border-b border-line bg-bg/90 px-4 py-4 backdrop-blur-md sm:-mx-6 sm:px-6 lg:top-[4.5rem] lg:-mx-10 lg:px-10">
+			<div className="sticky top-16 z-20 -mx-4 border-b border-line bg-bg/95 px-4 py-4 sm:-mx-6 sm:px-6 lg:top-[4.5rem] lg:-mx-10 lg:px-10">
 				<div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 					<div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 lg:mx-0 lg:px-0">
 						{categories.map((cat) => (
